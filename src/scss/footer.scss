@@ -1,0 +1,169 @@
+//====================================================================================================
+.footer {
+  &__container {
+  }
+
+  &__body {
+    border-top: 1px solid #d8d8d8;
+    display: grid;
+    grid-template-columns: 250px 1fr 290px;
+    @include adaptiveValue('padding-top', 80, 30);
+    @include adaptiveValue('padding-bottom', 60, 30);
+    @include adaptiveValue('column-gap', 80, 0);
+    @media (max-width: $pc) {
+      grid-template-columns: 1fr 290px;
+      grid-template-rows: auto auto;
+    }
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (max-width: $pc) {
+      grid-column: span 2;
+      @include adaptiveValue('margin-bottom', 40, 30);
+    }
+  }
+
+  &__logo {
+    margin: 0 0 em(16, 24) 0;
+  }
+
+  &__text {
+    color: $greyColor;
+    line-height: 150%;
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__contacts {
+  }
+
+  &__menu {
+    @media (max-width: $tablet) {
+      @include adaptiveValue('margin-bottom', 40, 30);
+    }
+  }
+
+  &__subscribe {
+  }
+}
+//==========================================================================================================================================
+
+._footer-title {
+  @include adaptiveValue('font-size', 24, 20);
+  line-height: math.div(29, 24);
+  color: #000000;
+  font-weight: 700;
+}
+//==========================================================================================================================================
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    color: $greyColor;
+    line-height: 150%;
+    transition: color 0.3s ease 0s;
+    &::before {
+      margin: 0 rem(8) 0 0;
+    }
+    &:not(:last-child) {
+      @include adaptiveValue(' margin-bottom', 16, 10);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangColor;
+      }
+    }
+  }
+}
+//==========================================================================================================================================
+
+.menu-footer {
+  @media (min-width: $mobile) {
+    display: flex;
+  }
+  &__column {
+    @media (min-width: $mobile) {
+      flex: 0 1 33.333%;
+    }
+  }
+
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    line-height: 120%;
+    color: $darkGreyColor;
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangColor;
+      }
+    }
+  }
+}
+
+//==========================================================================================================================================
+
+.subscribe {
+  &__title {
+    margin: 0 0 em(16, 24) 0;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+  }
+
+  &__input {
+    background-color: #f4f5f7;
+    color: #828282;
+    &::placeholder {
+      color: #828282;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      font-family: 'Gilroy';
+    }
+  }
+
+  &__button {
+    flex: 0 0 rem(45);
+    height: rem(45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(18);
+    background-color: $orangColor;
+    transition: background-color 0.3s ease 0s;
+    color: #ffffff;
+    margin: 0 0 0 rem(4);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #bc6c3a;
+      }
+    }
+  }
+}
+
+//====================================================================================================
